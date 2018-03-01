@@ -8,6 +8,7 @@ NEWSMTH_DIR = ".newsmth/"
 VISITED_URLS = os.path.join(NEWSMTH_DIR, "visited_urls.txt")
 
 class NewsmthCrawler():
+    '''A crawler to download images from http://www.newsmth.net'''
     def __init__(self, start_page, end_page):
         self.index_page_list = [INDEX_FORMAT % x for x in range(start_page, end_page)]
         self.article_page_dict = {}
