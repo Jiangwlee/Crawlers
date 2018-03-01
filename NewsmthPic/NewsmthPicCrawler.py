@@ -7,7 +7,7 @@ DOWNLOAD_DIR = "./NewsmthImages/"
 NEWSMTH_DIR = ".newsmth/"
 VISITED_URLS = os.path.join(NEWSMTH_DIR, "visited_urls.txt")
 
-class NewsmthCrawler():
+class NewsmthPicCrawler():
     '''A crawler to download images from http://www.newsmth.net'''
     def __init__(self, start_page, end_page):
         self.index_page_list = [INDEX_FORMAT % x for x in range(start_page, end_page)]
@@ -101,10 +101,10 @@ class NewsmthCrawler():
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print("Usage: python NewsmthCrawler.py start end\n")
-        print("E.g. \"python NewsmthCrawler.py 1 5\" will crawl all articles from page 1 to page 5")
+        print("Usage: python NewsmthPicCrawler.py start end\n")
+        print("E.g. \"python NewsmthPicCrawler.py 1 5\" will crawl all articles from page 1 to page 5")
         exit(0)
-    crawler = NewsmthCrawler(int(sys.argv[1]), int(sys.argv[2]))
+    crawler = NewsmthPicCrawler(int(sys.argv[1]), int(sys.argv[2]))
     try:
         crawler.crawlIndexPages()
         crawler.crawlArticlePages()
